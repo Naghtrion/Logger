@@ -1,0 +1,3 @@
+name: Logger
+main: com.naghtrion.logger.Logger
+version: 1.0
