@@ -27,6 +27,13 @@ public class Logger extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        if (!getDataFolder().exists()) {
+            try {
+                getDataFolder().createNewFile();
+            } catch (IOException ex) {
+                java.util.logging.Logger.getLogger(Logger.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         getServer().getPluginManager().registerEvents(this, this);
         getLogger().log(Level.INFO, "Plugin iniciado com sucesso!");
     }
