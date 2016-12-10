@@ -27,13 +27,12 @@ public class Logger extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        saveDefaultConfig();
+        getServer().getPluginManager().registerEvents(this, this);
         getLogger().log(Level.INFO, "Plugin iniciado com sucesso!");
     }
 
     @Override
     public void onDisable() {
-        saveConfig();
         getLogger().log(Level.INFO, "Plugin desligado com sucesso!");
     }
 
